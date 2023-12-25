@@ -12,7 +12,10 @@ const Chat = () => {
           </ul>
         </div>
         <div className="main-chatbox">
-          <h1 className="user-sender">Avi </h1>
+            <div className="user-sender-container">
+            <h1 className="user-sender">Avi </h1>
+            </div>
+          
           <div className="send-container">
             <input
               type="text"

@@ -19,6 +19,7 @@
   background-color: black;
   width: 70%;
   display: flex;
+  flex-direction: column;
 
   /*style*/
   border-radius: 30px;
@@ -49,10 +50,19 @@
   );
 }
 
+.user-sender-container{
+    margin: 5px;
+    padding: 5px;
+    border-radius: 26px;
+    background: linear-gradient(180deg, #11468F 0%, #AAA 100%);
+
+
+}
+
 .user-sender {
   color: #ffff;
 }
 
 .send-container {
-  align-self: flex-end;
+  justify-self: flex-end;
 }
