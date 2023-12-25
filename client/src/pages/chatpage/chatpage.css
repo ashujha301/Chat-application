@@ -29,6 +29,7 @@
     rgba(17, 70, 143, 0.76) 94.75%
   );
   box-shadow: 4px 6px 20px 5px rgba(0, 0, 0, 0.35);
+  
 }
 
 .msgbox {
@@ -51,11 +52,12 @@
 }
 
 .user-sender-container{
-    margin: 5px;
+    margin: 20px;
     padding: 5px;
+    margin-left: 40px;
+    margin-right: 20px;
     border-radius: 26px;
     background: linear-gradient(180deg, #11468F 0%, #AAA 100%);
-
 
 }
 
@@ -64,5 +66,7 @@
 }
 
 .send-container {
-  justify-self: flex-end;
+  margin-top: auto;
+  margin-left:40px;
+  margin-bottom: 20px;
 }

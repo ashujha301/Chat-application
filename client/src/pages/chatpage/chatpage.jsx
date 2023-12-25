@@ -15,7 +15,9 @@ const Chat = () => {
             <div className="user-sender-container">
             <h1 className="user-sender">Avi </h1>
             </div>
-          
+            <div>
+                <p>hello</p>
+            </div>
           <div className="send-container">
             <input
               type="text"
