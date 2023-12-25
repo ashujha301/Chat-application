@@ -1,0 +1,13 @@
+.main-navbar {
+  justify-content: space-between;
+  display: flex;
+  border-radius: 30px;
+  background: linear-gradient(
+    180deg,
+    #11468f -23.34%,
+    rgba(17, 70, 143, 0.57) 118.06%
+  );
+
+  box-shadow: 4px 6px 20px 5px rgba(0, 0, 0, 0.29);
+  padding: 10px;
+}
