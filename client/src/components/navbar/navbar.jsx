@@ -1,12 +1,12 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Navbar, Nav } from "react-bootstrap";
+import "./navbar.css"; // Import the regular CSS file
 
 const MyNavbar = () => {
   return (
-    <div className="p-3" style={{backgroundColor: 'black'}}>
-      <Navbar className="rounded p-3 bg-dark" variant="dark">
-        <Navbar.Brand className="mr-auto">ChatApp</Navbar.Brand>
-        <Nav className="mx-auto">
+    <div className="navbar-container p-3">
+      <Navbar className="rounded navbar" variant="dark">
+        <Navbar.Brand className="brand mr-auto">ChatApp</Navbar.Brand>
+        <Nav className="nav mx-auto">
           <Nav.Link href="#hello">Hello Ayush</Nav.Link>
         </Nav>
         <Nav>

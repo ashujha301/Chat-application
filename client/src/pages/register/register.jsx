@@ -1,24 +1,32 @@
-
+import Navbar from "../../components/navbar/navbar";
+import "./register.css"; // Common styling for authentication pages
 
 const Register = () => {
   return (
-    <div className="register-container">
-      <h2>Register</h2>
-      <form>
-        <label htmlFor="username">Username:</label>
-        <input type="text" id="username" name="username" />
-
-        <label htmlFor="email">Email:</label>
-        <input type="email" id="email" name="email" />
-
-        <label htmlFor="password">Password:</label>
-        <input type="password" id="password" name="password" />
-
-        <button type="submit">Register</button>
-      </form>
-    </div>
+    <>
+      <Navbar />
+      <div className="auth-page-container">
+        <div className="auth-form-container">
+          <h2>Register</h2>
+          <form>
+            <div className="form-group">
+              <label htmlFor="username">Username:</label>
+              <input type="text" id="username" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email:</label>
+              <input type="email" id="email" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password:</label>
+              <input type="password" id="password" />
+            </div>
+            <button type="submit">Register</button>
+          </form>
+        </div>
+      </div>
+    </>
   );
 };
 
 export default Register;
-

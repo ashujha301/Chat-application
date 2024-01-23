@@ -1,46 +1,43 @@
 import Navbar from "../../components/navbar/navbar";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "./ChatPage.css";
 
-const Chat = () => {
-    return (
-      <>
-        <Navbar />
-        <div className="container-fluid mt-2" style={{ height: '100vh',backgroundColor: 'black' }}>
-          <div className="row p-2" style={{ height: '100%' }}>
-            <div className="col-md-3 rounded bg-dark text-white" style={{ height: '100%' }}>
-              <div className="p-4">
-                <ul>
-                  <li>ayush</li>
-                  <li>adarsh</li>
-                </ul>
-              </div>
-            </div>
-            <div className="col-md-9" style={{ height: '100%' }}>
-              <div className="p-4 rounded bg-dark text-white h-100">
-                <div className="user-sender-container">
-                  <h1 className="user-sender">Avi </h1>
-                </div>
-                <div className="chatbox-container h-100 d-flex">
-                  {/* Area to receive messages */}
-                  <div className="received-msg">
-                    <p>Message from another user</p>
-                  </div>
-                  {/* Area to send messages */}
-                  <div className="send-container d-flex align-items-center">
-                    <input
-                      type="text"
-                      className="form-control msgbox"
-                      placeholder="Write a message..."
-                    />
-                    <button className="btn btn-success sendbtn">Send</button>
-                  </div>
-                </div>
-              </div>
+const ChatPage = () => {
+  return (
+    <>
+      <Navbar />
+      <div className="chat-page-container">
+        <div className="user-list-container">
+          <ul className="user-list">
+            <li>User 1</li>
+            <li>User 2</li>
+            {/* ... */}
+          </ul>
+        </div>
+        <div className="chat-container">
+          <div className="selected-user">
+            <img src="" alt="User" className="user-image" />
+            <div>
+              <div>Selected User</div>
+              <div className="user-status"></div>
             </div>
           </div>
+          <div className="chat-history">
+            <div className="selected-user-message-box">
+              Selected user message on the left
+            </div>
+            <div className="sender-message-box">
+              Sender message on the right
+            </div>
+            {/* ... */}
+          </div>
+          <div className="chat-input-container">
+            <input type="text" placeholder="Type your message" />
+            <button>Send</button>
+          </div>
         </div>
-      </>
-    );
-  };
-  
-  export default Chat;
+      </div>
+    </>
+  );
+};
+
+export default ChatPage;

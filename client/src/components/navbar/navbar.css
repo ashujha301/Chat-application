@@ -1,0 +1,31 @@
+.navbar-container {
+    padding: 10px;
+    background-color: black;
+  }
+  
+  .navbar {
+    border: 1px solid #ccc;
+  }
+  
+  .brand {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .nav {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .nav-link {
+    cursor: pointer;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 1px solid #ab0d0d;
+    border-radius: 5px;
+  }
+  
+  .nav-link:hover {
+    background-color: #555;
+  }
+  
