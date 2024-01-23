@@ -8,6 +8,7 @@
   
   .auth-form-container {
     width: 300px;
+    color: #ccc;
     padding: 20px;
     background-color: #282c34; /* Adjust color as needed */
     border-radius: 8px;
@@ -29,7 +30,7 @@
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    background-color: #282c34; /* Adjust color as needed */
+    background-color: #2d3035; /* Adjust color as needed */
     color: #ccc;
     outline: none;
   }

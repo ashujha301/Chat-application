@@ -61,7 +61,7 @@
     margin-bottom: 10px;
     display: flex;
     flex-direction: column-reverse; /* Reverse the order of children in column direction */
-    background-color: #555;
+    background-color: #2d3035;
   }
   
   .selected-user-message-box {
