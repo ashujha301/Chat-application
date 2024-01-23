@@ -1,10 +1,9 @@
-import Navbar from "../../components/navbar/navbar";
+
 import "./ChatPage.css";
 
 const ChatPage = () => {
   return (
     <>
-      <Navbar />
       <div className="chat-page-container">
         <div className="user-list-container">
           <ul className="user-list">
@@ -31,6 +30,7 @@ const ChatPage = () => {
             {/* ... */}
           </div>
           <div className="chat-input-container">
+            <button>+</button>
             <input type="text" placeholder="Type your message" />
             <button>Send</button>
           </div>

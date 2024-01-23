@@ -1,10 +1,10 @@
-import Navbar from "../../components/navbar/navbar";
-import "./register.css"; // Common styling for authentication pages
+
+import "./register.css";
 
 const Register = () => {
   return (
     <>
-      <Navbar />
+     
       <div className="auth-page-container">
         <div className="auth-form-container">
           <h2>Register</h2>

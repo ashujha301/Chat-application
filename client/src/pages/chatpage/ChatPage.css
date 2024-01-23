@@ -85,19 +85,27 @@
   
   .chat-input-container {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     border: 1px solid #ccc;
     padding: 10px;
   }
   
   .chat-input-container input {
-    flex: 1;
+    flex: 9; /* 90% of the available space */
     padding: 5px;
     margin-right: 10px;
-    border: 1px solid #ccc;
+    border: none;
   }
   
   .chat-input-container button {
+    flex: 1; /* Remaining 10% of the available space */
     padding: 5px 10px;
-    cursor: pointer;
-    border: 1px solid #ccc;
+    border: none;
+    background-color: transparent;
+    color: #25d366;
+  }
+
+  .chat-input-container button:hover {
+    background-color: #555;
   }

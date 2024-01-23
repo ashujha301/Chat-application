@@ -1,10 +1,9 @@
-import Navbar from "../../components/navbar/navbar";
-import "./login.css"; // Common styling for authentication pages
+
+import "./login.css";
 
 const Login = () => {
   return (
     <>
-      <Navbar />
       <div className="auth-page-container">
         <div className="auth-form-container">
           <h2>Login</h2>
