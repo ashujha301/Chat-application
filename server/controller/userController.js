@@ -42,4 +42,25 @@ const registerUser = async (req, res) => {
     }
 };
 
-module.exports = { registerUser };
+const loginUser = async (req,res)=>{
+    const { email, password } = req.body;
+   try {
+    const user = await userModel.findOne({ email });
+    if(!user){
+        return res.status(400).json({ error:'User not found'});
+        }
+
+    if(!await bcrypt.compare(password, user.password)){
+        return res.status(401).json({ error: "Invalid Password" })
+        }
+    //delete the password from the response body before sending it to the client side
+    delete user.password;
+    const token=createToken(user._id);
+    res.status(200).json({token, name:user.name , email:email});
+   } catch (error) {
+    return res.status(500).json({error});
+   }
+            
+}
+
+module.exports = { registerUser , loginUser };

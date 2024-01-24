@@ -1,11 +1,12 @@
+
 .chat-page-container {
     display: flex;
     background-color: black;
-    height: 100vh;
+    
   }
   
   .user-list-container {
-    width: 20%;
+    width: 30%;
     padding: 10px;
     border: 1px solid #ccc;
   }
@@ -108,4 +109,5 @@
 
   .chat-input-container button:hover {
     background-color: #555;
+    border-radius: 5px;
   }

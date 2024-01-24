@@ -1,9 +1,11 @@
-
+import MyNavbar from "../../components/navbar/navbar";
 import "./ChatPage.css";
 
 const ChatPage = () => {
   return (
     <>
+    <div className="page-container" >
+    <MyNavbar/>
       <div className="chat-page-container">
         <div className="user-list-container">
           <ul className="user-list">
@@ -14,7 +16,7 @@ const ChatPage = () => {
         </div>
         <div className="chat-container">
           <div className="selected-user">
-            <img src="" alt="User" className="user-image" />
+            <img src="https://fastly.picsum.photos/id/591/200/200.jpg?hmac=5agpVWsRchY0DObXs23vYWjjgqLZEBhqSvTwfCAcyng" alt="User" className="user-image" />
             <div>
               <div>Selected User</div>
               <div className="user-status"></div>
@@ -36,6 +38,7 @@ const ChatPage = () => {
           </div>
         </div>
       </div>
+    </div>
     </>
   );
 };
