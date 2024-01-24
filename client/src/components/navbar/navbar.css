@@ -1,26 +1,33 @@
 .navbar-container {
-    background-color: black;
-  }
-  
-  .navbar {
-    border: 1px solid #ccc;
-  }
-  
-  .brand {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .nav {
-    list-style: none;
-  }
-  
-  .nav-link {
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .nav-link:hover {
-    background-color: #555;
-  }
-  
+  background-color: black;
+}
+
+#main-navbar {
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ccc;
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+  color: #ccc;
+}
+
+.nav-link {
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 10px;
+  color: #ccc;
+}
+
+.nav-link:hover {
+  background-color: #555;
+}
