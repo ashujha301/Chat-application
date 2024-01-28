@@ -11,7 +11,7 @@ function App() {
       <Route path="/" element={<Chat />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
-      <Route path="*" element={<Navigate to="/" />} />
+      <Route path="*" element={<Navigate to="/login" />} />
     </Routes>
     </div>
     
