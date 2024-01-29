@@ -25,7 +25,7 @@ const Register = () => {
         theme: "colored",
       });
 
-      navigate("/");
+      navigate("/chat");
     } catch (error) {
       console.error(error.response.data);  // Log the error response for debugging
 

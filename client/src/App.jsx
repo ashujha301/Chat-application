@@ -9,7 +9,7 @@ function App() {
     <>
     <div className="page-container">
     <Routes>
-      <Route path="/" element={<Chat />} />
+      <Route path="/chat" element={<Chat />} />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="*" element={<Navigate to="/login" />} />

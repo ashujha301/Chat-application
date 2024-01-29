@@ -30,7 +30,7 @@ const Login = () => {
         localStorage.setItem("userInfo", JSON.stringify({ token, user }));
   
         //redirect to chat page after succesfull login
-        navigate("/");
+        navigate("/chat");
   
         toast.success("Login Successful", {
           position: "top-center",
