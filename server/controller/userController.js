@@ -56,7 +56,14 @@ const loginUser = async (req, res) => {
     //delete the password from the response body before sending it to the client side
     delete user.password;
     const token = createToken(user._id);
-    res.status(200).json({ token, name: user.name, email: email });
+    res.status(200).json({
+      token,
+      user: {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+      },
+    });
   } catch (error) {
     return res.status(500).json({ error });
   }
