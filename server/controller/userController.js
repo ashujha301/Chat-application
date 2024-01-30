@@ -76,7 +76,12 @@ const findUser = async (req, res) => {
     if (!user) {
       res.status(400).json("user not found");
     } else {
-      res.status(200).json(user);
+      res.status(200).json({
+        user: {
+          _id: user._id,
+          name: user.name,
+        },
+      });
     }
   } catch (error) {
     res.status(500).json({ error });

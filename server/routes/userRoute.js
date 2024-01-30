@@ -5,7 +5,7 @@ const router = express.Router();
 router.post("/register" , registerUser);
 router.post("/login", loginUser);
 router.get("/finduser/:id", findUser);
-router.get("/", getUser);
+router.get("/getusers", getUser);
 
 
 module.exports = router;
