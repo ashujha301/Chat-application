@@ -1,23 +1,39 @@
-// import { createContext,useState } from "react";
+import { createContext, useCallback, useState ,useEffect} from "react";
 
-// export const authContext = createContext();
+export const AuthContext = createContext();
 
-// export const authContextProvider = ({children}) =>{
-//     const [user, setUser] = useState(null);
-//     const [registerInfo, setRegisterInfo] = useState({
-//         name:"",
-//         email:"",
-//         password:""
-//     });
+export const AuthContextProvider = ({children}) => {
+  const [user, setUser] = useState(null);
+  const [registerInfo, setRegisterInfo] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
 
-//     return(
-//         <authContext.Provider
-//         value={{
-//             user,
-//             registerInfo,
-//         }}
-//         >
-//             {children}
-//         </authContext.Provider>
-//     );
-// };
+  console.log("userInfo",registerInfo);
+
+  useEffect(() => {
+    const user = localStorage.getItem("userInfo");
+
+    setUser(JSON.parse(user));
+  }, []);
+
+  
+  
+
+  const updateRegisterInfo = useCallback((updateCallback) => {
+    setRegisterInfo((prevInfo) => updateCallback(prevInfo));
+  }, []);
+
+  return (
+    <AuthContext.Provider
+      value={{
+        user,
+        registerInfo,
+        updateRegisterInfo,
+      }}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
+};

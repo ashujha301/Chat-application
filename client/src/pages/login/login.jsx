@@ -1,15 +1,18 @@
 import { NavLink ,useNavigate} from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./login.css";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';  // Correct import
+import { AuthContext } from "../../context/authContext";
 
 const Login = () => {
+  const {user} =useContext(AuthContext);
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
 
+  
 
   const submitHandler = async () => {
     if (!email || !password) {
@@ -30,7 +33,7 @@ const Login = () => {
         localStorage.setItem("userInfo", JSON.stringify({ token, user }));
   
         //redirect to chat page after succesfull login
-        navigate("/chat");
+        navigate("/");
   
         toast.success("Login Successful", {
           position: "top-center",
@@ -49,6 +52,12 @@ const Login = () => {
       });
     }
   };
+
+  //is user already stored in the localstorage
+  if (user) {
+     navigate("/");
+     return null;
+  }
 
   return (
     <>
