@@ -5,7 +5,7 @@ const userRoute = require("./routes/userRoute");
 
 const app = express();
 require("dotenv").config();
-
+//parsing middlesware
 app.use(express.json());
 const corsOptions = {
     origin: 'http://localhost:5173',

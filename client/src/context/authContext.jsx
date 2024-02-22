@@ -15,8 +15,12 @@ export const AuthContextProvider = ({children}) => {
   useEffect(() => {
     const user = localStorage.getItem("userInfo");
 
-    setUser(JSON.parse(user));
+    
+      setUser(JSON.parse(user));
+    
   }, []);
+
+
 
   
   

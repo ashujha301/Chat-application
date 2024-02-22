@@ -7,6 +7,7 @@
 }
 .chat-page-container {
     display: flex;
+    
     background-color: black;
     height: 100%;
   }
@@ -14,27 +15,32 @@
   .user-list-container {
    
     width: 30%;
-    padding: 10px;
-    border: 1px solid #ccc;
+    
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+  }
+
+  .navbar {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
   
   .user-list {
     list-style: none;
-    padding: 0;
+    padding-right: 10px;
     color: #ccc;
   }
   
   .user-list li {
     cursor: pointer;
-    padding: 5px;
-    margin-bottom: 5px;
-    border: 1px solid #ffffff;
-    border-radius: 5px;
+    padding: auto;
+    margin-bottom: 5%;
+    border-bottom: 1px solid #ffffff;
   }
   
   .chat-container {
     flex: 1;
-    padding: 10px;
     border: 1px solid #ccc;
     display: flex;
     flex-direction: column;
@@ -44,10 +50,16 @@
   .selected-user {
     font-size: 18px;
     font-weight: bold;
-    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
     color: #ccc;
     display: flex;
     align-items: center;
+  }
+
+  .selected-user-container {
+    margin: 10px;
+    display: flex;
   }
   
   .user-image {
@@ -69,7 +81,6 @@
     flex: 1; /* Takes remaining space */
     overflow-y: auto;
     padding: 10px;
-    margin-bottom: 10px;
     display: flex;
     flex-direction: column-reverse;
     background-color: #2d3035;
@@ -98,12 +109,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #ccc;
-    padding: 10px;
+    border-top: 1px solid #ccc;
+    padding: 20px;
   }
   
   .chat-input-container input {
-    flex: 9; /* 90% of the available space */
+     /* 90% of the available space */
     padding: 5px;
     margin-right: 10px;
     border: none;

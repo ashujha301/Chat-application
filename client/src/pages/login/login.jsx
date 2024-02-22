@@ -12,7 +12,11 @@ const Login = () => {
   const [password, setPassword] = useState();
   const navigate = useNavigate();
 
-  
+   //is user already stored in the localstorage
+  if (user) {
+    navigate("/");
+    return null;
+ }
 
   const submitHandler = async () => {
     if (!email || !password) {
@@ -29,16 +33,18 @@ const Login = () => {
       // Check if response is defined before accessing response.data
       if (response && response.data) {
         const { token, user } = response.data;
-  
+        
         localStorage.setItem("userInfo", JSON.stringify({ token, user }));
-  
-        //redirect to chat page after succesfull login
-        navigate("/");
-  
+        
+        
         toast.success("Login Successful", {
           position: "top-center",
           theme: "colored",
         });
+
+        //redirect to chat page after succesfull login
+        navigate("/");
+        
       } else {
         // Handle the case when response or response.data is undefined
         console.error("Login failed. Response or response.data is undefined.");
@@ -52,12 +58,6 @@ const Login = () => {
       });
     }
   };
-
-  //is user already stored in the localstorage
-  if (user) {
-     navigate("/");
-     return null;
-  }
 
   return (
     <>

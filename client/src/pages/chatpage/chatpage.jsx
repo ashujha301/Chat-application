@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import MyNavbar from "../../components/navbar/navbar";
+import Navbar from "../../components/navbar/navbar";
 import axios from "axios";
 import "./ChatPage.css";
 
@@ -22,9 +22,12 @@ const ChatPage = () => {
   return (
     <>
       <div className="page-container">
-        <MyNavbar />
         <div className="chat-page-container">
           <div className="user-list-container">
+            <div className="navbar">
+              <Navbar />
+            </div>
+
             {users.length > 0 ? (
               <ul className="user-list">
                 {users.map((user) => (
@@ -37,16 +40,19 @@ const ChatPage = () => {
           </div>
           <div className="chat-container">
             <div className="selected-user">
-              <img
-                src="https://fastly.picsum.photos/id/591/200/200.jpg?hmac=5agpVWsRchY0DObXs23vYWjjgqLZEBhqSvTwfCAcyng"
-                alt="User"
-                className="user-image"
-              />
-              <div>
-                <div>Selected User</div>
-                <div className="user-status"></div>
+              <div className="selected-user-container">
+                <img
+                  src="https://fastly.picsum.photos/id/591/200/200.jpg?hmac=5agpVWsRchY0DObXs23vYWjjgqLZEBhqSvTwfCAcyng"
+                  alt="User"
+                  className="user-image"
+                />
+                <div>
+                  <div>Selected User</div>
+                  <div className="user-status"></div>
+                </div>
               </div>
             </div>
+
             <div className="chat-history">
               <div className="selected-user-message-box">
                 Selected user message on the left
