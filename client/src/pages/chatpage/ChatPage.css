@@ -13,7 +13,8 @@
   }
   
   .user-list-container {
-   
+    display: flex;
+    flex-direction: column;
     width: 30%;
     
     border-top: 1px solid #ccc;
@@ -22,21 +23,34 @@
   }
 
   .navbar {
+    display: flex;
+    flex-direction: column;
     padding-top: 10px;
     padding-bottom: 10px;
   }
   
   .user-list {
     list-style: none;
-    padding-right: 10px;
+    padding-right: 0;
+    padding-left: 0;
     color: #ccc;
+    overflow-y: auto;
+  }
+
+  .username {
+    font-weight: bold;
+    font-size: large;
   }
   
   .user-list li {
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
     cursor: pointer;
-    padding: auto;
-    margin-bottom: 5%;
-    border-bottom: 1px solid #ffffff;
+    margin-bottom: 0;
+    border-bottom: 1px solid #ffffff7a;
   }
   
   .chat-container {
@@ -69,17 +83,16 @@
     margin-right: 10px;
   }
   
-  .user-status {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: green; /* Adjust color as needed */
-    margin-left: auto; /* Pushes it to the right */
-  }
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+  
   
   .chat-history {
     flex: 1; /* Takes remaining space */
     overflow-y: auto;
+    scrollbar-width: none;
     padding: 10px;
     display: flex;
     flex-direction: column-reverse;
@@ -116,6 +129,7 @@
   .chat-input-container input {
      /* 90% of the available space */
     padding: 5px;
+    margin-left: 10px;
     margin-right: 10px;
     border: none;
   }

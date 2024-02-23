@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Navbar from "../../components/navbar/navbar";
 import axios from "axios";
 import "./ChatPage.css";
+import { AuthContext } from "../../context/authContext";
 
 const ChatPage = () => {
   const [users, setUsers] = useState([]);
@@ -31,7 +32,19 @@ const ChatPage = () => {
             {users.length > 0 ? (
               <ul className="user-list">
                 {users.map((user) => (
-                  <li key={user._id}>{user.name}</li>
+                  <li key={user._id}>
+                    <img
+                      src="https://fastly.picsum.photos/id/591/200/200.jpg?hmac=5agpVWsRchY0DObXs23vYWjjgqLZEBhqSvTwfCAcyng"
+                      alt="User"
+                      className="user-image"
+                    />
+                    <div>
+                      <div className="username">{user.name}</div>
+                      some msg akhvcgksbdscidcsbsdcdkbhcabcihacks
+                      dkhkhccbisbcksc
+                      khchbcaihahbhc
+                    </div>
+                  </li>
                 ))}
               </ul>
             ) : (
@@ -48,7 +61,7 @@ const ChatPage = () => {
                 />
                 <div>
                   <div>Selected User</div>
-                  <div className="user-status"></div>
+                  <div className="user-status">Online</div>
                 </div>
               </div>
             </div>

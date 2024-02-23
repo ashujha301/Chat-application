@@ -1,40 +1,42 @@
-import { createContext, useCallback, useState ,useEffect} from "react";
+import { createContext, useCallback, useState, useEffect } from "react";
+import axios from 'axios';
 
 export const AuthContext = createContext();
 
-export const AuthContextProvider = ({children}) => {
+export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [registerInfo, setRegisterInfo] = useState({
-    name: "",
-    email: "",
-    password: "",
-  });
-
-  console.log("userInfo",registerInfo);
 
   useEffect(() => {
-    const user = localStorage.getItem("userInfo");
-
-    
-      setUser(JSON.parse(user));
-    
+    const userInfo = localStorage.getItem("userInfo");
+    if (userInfo) {
+      setUser(JSON.parse(userInfo));
+    }
   }, []);
 
+  const login = async (email, password) => {
+    try {
+      const response = await axios.post("http://localhost:5000/api/login", { email, password });
+      const { token, user } = response.data;
+      localStorage.setItem("userInfo", JSON.stringify({ token, user }));
+      setUser(user);
+      return { success: true, user };
+    } catch (error) {
+      console.error("Login failed:", error);
+      return { success: false, error: "Invalid Email or Password" };
+    }
+  };
 
-
-  
-  
-
-  const updateRegisterInfo = useCallback((updateCallback) => {
-    setRegisterInfo((prevInfo) => updateCallback(prevInfo));
-  }, []);
+  const logout = () => {
+    setUser(null);
+    localStorage.removeItem("userInfo");
+  };
 
   return (
     <AuthContext.Provider
       value={{
         user,
-        registerInfo,
-        updateRegisterInfo,
+        login,
+        logout,
       }}
     >
       {children}
