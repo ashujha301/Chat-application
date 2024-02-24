@@ -2,10 +2,11 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Chat from "./pages/chatpage/chatpage";
 import Register from "./pages/register/register";
 import Login from "./pages/login/login";
-import { AuthContextProvider } from "./context/authContext";
-
+import { AuthContext, AuthContextProvider } from "./context/authContext";
+import { useContext } from "react";
 
 function App() {
+  const { user } = useContext(AuthContext);
 
   return (
     <AuthContextProvider>
@@ -14,7 +15,7 @@ function App() {
           {/* Protected route for Chat */}
           <Route
             path="/"
-            element={<Chat />}
+            element={ user ? <Chat /> : <Navigate to="/login" />}
           />
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
